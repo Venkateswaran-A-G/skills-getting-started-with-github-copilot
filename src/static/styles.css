@@ -63,6 +63,12 @@ section h3 {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f9f9f9;
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(26, 35, 126, 0.08);
 }
 
 .activity-card h4 {
@@ -72,6 +78,56 @@ section h3 {
 
 .activity-card p {
   margin-bottom: 8px;
+}
+
+.activity-card p + .participant-list,
+.activity-card p + .info {
+  margin-top: 8px;
+}
+
+.participant-list {
+  list-style: disc inside;
+  margin-top: 8px;
+  max-height: 140px;
+  overflow-y: auto;
+  padding-left: 18px;
+  gap: 6px;
+}
+
+/* Each participant shown as a small chip-like item while keeping bullets */
+.participant-list .participant {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  padding: 6px 8px;
+  background-color: #eef3ff;
+  border-radius: 6px;
+  font-size: 14px;
+  color: #1b3a8a;
+  border: 1px solid rgba(27, 58, 138, 0.08);
+}
+
+/* Small circular avatar with initial */
+.participant-list .avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #c5cae9 0%, #9fa8da 100%);
+  color: white;
+  font-weight: 600;
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+/* Participant name */
+.participant-list .participant-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .form-group {
